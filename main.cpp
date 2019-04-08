@@ -42,9 +42,8 @@ void execute(int k) {
 }
 
 void write_func() {
-    errno = 0;
     func_ptr = mmap(nullptr, len, PROT_WRITE | PROT_READ, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
-    if (errno != 0) {
+    if (func_ptr == MAP_FAILED) {
         std::cerr << "Can't allocate memory: " << strerror(errno) << "\n";
         exit(0);
     }
@@ -115,16 +114,14 @@ int main() {
         std::cin >> s;
         if (s == "exit") {
             break;
-        } else
-        if (s == "change") {
+        } else if (s == "change") {
             x = get_int();
             if (x == -1) {
                 std::cout << "Illegal command: illegal value of p\n";
                 continue;
             }
             change_a(x);
-        } else
-        if (s == "exec") {
+        } else if (s == "exec") {
             x = get_int();
             if (x == -1) {
                 std::cerr << "Illegal command: illegal value of n\n";
