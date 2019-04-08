@@ -61,8 +61,8 @@ void print_info() {
     std::cout << "Info:\n" <<
                  "Function has one argument n.\n" <<
                  "It calculates a^n % mod, where mod is a constant integer equal to 10^9 + 7 and a equals to 999999999 by default.\n" <<
-                 "If you want to execute function with argument n (n must be positive integers no more than 2 * 10^9),\ntype \"exec n\".\n" <<
-                 "If you want to change a with value p (p must be positive integer no more than 2 * 10^9), type \"change p\".\n" <<
+                 "If you want to execute function with argument n (n must be non-negative integers no more than 2 * 10^9),\ntype \"exec n\".\n" <<
+                 "If you want to change a with value p (p must be non-negative integer no more than 2 * 10^9), type \"change p\".\n" <<
                  "Type \"exit\" if you want to exit\n";
 }
 
